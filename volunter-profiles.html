@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Volunteer List</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100vh;
+      background-color: #f1f1f1;
+      padding: 20px 0;
+    }
+    .navbar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .navbar li a {
+      display: block;
+      color: #000;
+      padding: 12px 16px;
+      text-decoration: none;
+    }
+    .navbar li a:hover {
+      background-color: #555;
+      color: white;
+    }
+    .navbar .active {
+      background-color: #0C499C;
+      color: white;
+    }
+    .page-content {
+      margin-left: 220px;
+      padding: 40px;
+    }
+    .volunteer-list {
+      margin-top: 20px;
+    }
+    .volunteer-list ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .volunteer-list li {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .volunteer-list a {
+      text-decoration: none;
+      color: #0C499C;
+      font-weight: bold;
+    }
+    .volunteer-list a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="volunteers.html">Volunteer List</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="page-content">
+    <h1>Volunteer List</h1>
+    <p>Click on a volunteer's name to view their profile.</p>
+
+    <div class="volunteer-list">
+      <ul>
+        <li><a href="profile.html?volunteer=alice">Alice Johnson</a></li>
+        <li><a href="profile.html?volunteer=ben">Ben Thompson</a></li>
+        <li><a href="profile.html?volunteer=charlie">Charlie Brown</a></li>
+        <li><a href="profile.html?volunteer=emma">Emma White</a></li>
+        <li><a href="profile.html?volunteer=john">John Smith</a></li>
+        <li><a href="profile.html?volunteer=lucas">Lucas Green</a></li>
+        <li><a href="profile.html?volunteer=mia">Mia Lee</a></li>
+        <li><a href="profile.html?volunteer=olivia">Olivia Davis</a></li>
+        <li><a href="profile.html?volunteer=ryan">Ryan Adams</a></li>
+        <li><a href="profile.html?volunteer=sophia">Sophia Martinez</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

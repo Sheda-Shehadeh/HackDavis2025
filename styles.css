@@ -458,6 +458,7 @@ body {font-family: Verdana, sans-serif;}
   /*grid-template-columns: auto 1fr;*/
   grid-template-columns: 60px repeat(var(--numDays), 1fr); /* One column for times, rest for days */
   margin: 2rem;
+  
 }
 
 .timeline {
@@ -499,7 +500,7 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .end-12 {
-  grid-row-end: 4;
+  grid-row-end: 5;
 }
 
 .end-1 {
