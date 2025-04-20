@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile Page</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <img src="images/NAMI-Yolo-County-CA-blue-2line-web.png" alt="Website Header" class="top-banner">
+  
   <nav class="navbar">
     <ul>
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a href="volunteer-profiles.html">Volunteer Profiles</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="volunteer-profiles.html">Volunteer Profiles</a></li>
       <li><a href="calendar.html">Calendar</a></li>
     </ul>
     <div class="nav-bottom">
@@ -19,24 +21,79 @@
     </div>
   </nav>
 
-  <div class="profile-container">
-    <div class="profile-header">
-      <div class="profile-image">
-        <img src="https://www.smilisticdental.com/wp-content/uploads/2017/11/blank-profile-picture-973460_960_720.png" alt="Profile Picture">
-      </div>
-      <div class="profile-details">
-        <div class="name-and-role">
-          <h1>Jane Doe</h1>
-          <p class="role">Peer</p>
+  
+    <div class="profile-container">
+      <div class="profile-header">
+        <div class="profile-image">
+          <img src="https://www.smilisticdental.com/wp-content/uploads/2017/11/blank-profile-picture-973460_960_720.png" alt="Profile Picture">
         </div>
-        <div class="volunteer-info">
-          <span class="volunteer-status">Volunteer status: <span class="active-text">Active</span></span>
-          <span class="volunteer-since">Volunteer since 04/19/25</span>
+        <div class="profile-details">
+          <div class="name-and-role">
+            <h1>Jane Doe</h1>
+            <p class="role">Peer</p>
+          </div>
+
+          <div class="contact-demographics">
+          <div class="profile-contact">
+            <span> class="profile-contact">
+              <h2>Contact Information</h2>
+              <ul>
+                <li><strong>Email:</strong> jdoe@gmail.com</li>
+                <li><strong>Phone:</strong> (123) 456-7890</li>
+                <li><strong>Address:</strong> 123 Aggie Dr. Davis, CA 95615</li>
+              </ul>
+            </span>
+
+            <span>
+            <div class="demographic-info">
+              <span> class="demo-info">
+              <h2>Demographic Information</h2>
+              <ul>
+                <li><strong>Gender:</strong> Nonbinary</li>
+                <li><strong>Age:</strong> 21</li>
+                <li><strong>Ethnicity:</strong> Unknown</li>
+                <li><strong>Race:</strong> Unknown</li>
+              </ul>
+            </div>
+
+          </span>
+
+          </div>
         </div>
-      </div>
+          
+          
+          <div class="volunteer-info">
+            <span class="volunteer-status">Volunteer status: <span class="active-text">Active</span></span>
+            <span class="volunteer-since">Volunteer since 04/19/25</span>
+          </div>
+
+        <!--
+        <div class="group-info">
+          <div class="profile-contact">
+            <h2>Contact Information</h2>
+            <ul>
+              <li><strong>Email:</strong> jdoe@gmail.com</li>
+              <li><strong>Phone:</strong> (123) 456-7890</li>
+              <li><strong>Address:</strong> 123 Aggie Dr. Davis, CA 95615</li>
+            </ul>
+          </div>
+
+          <div class="demographic-info">
+            <h2>Demographic Information</h2>
+            <ul>
+              <li><strong>Gender:</strong> Nonbinary</li>
+              <li><strong>Age:</strong> 21</li>
+              <li><strong>Ethnicity:</strong> Unknown</li>
+              <li><strong>Race:</strong> Unknown</li>
+            </ul>
+          </div>
+        </div>
+        -->
+        </div>
       
     </div>
 
+    <div class="profile-layout">
     <div class="profile-contact">
       <h2>Contact Information</h2>
       <ul>
@@ -74,6 +131,128 @@
     </div>
 
   </div>
+
+  <!-- Right: Pie Chart
+  <div class="chart-container">
+    <canvas id="volunteerPieChart" width="300" height="300"></canvas>
+  </div>
+</div>
+
+<!-- Chart.js Script
+<script>
+  const ctx = document.getElementById('volunteerPieChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Environmental', 'Education', 'Mental Health', 'Fundraising'],
+      datasets: [{
+        label: 'Volunteer Interests',
+        data: [10, 5, 8, 6],
+        backgroundColor: ['#36A2EB', '#FFCE56', '#FF6384', '#4BC0C0'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  });
+</script>-->
+
+
+<!-- Taken from free online resource: https://freefrontend.com/css-calendars/ -->
+<div class="mini-calendar-wrapper">
+  <div class="mini-calendar">
+    <div class="timeline">
+      <div class="spacer"></div>
+      <div class="time-marker">9 AM</div>
+      <div class="time-marker">10 AM</div>
+      <div class="time-marker">11 AM</div>
+      <div class="time-marker">12 PM</div>
+      <div class="time-marker">1 PM</div>
+      <div class="time-marker">2 PM</div>
+      <div class="time-marker">3 PM</div>
+      <div class="time-marker">4 PM</div>
+      <div class="time-marker">5 PM</div>
+      <div class="time-marker">6 PM</div>
+    </div>
+    <div class="days">
+      <div class="day mon">
+        <div class="date">
+          <p class="date-num">9</p>
+          <p class="date-day">Mon</p>
+        </div>
+        <div class="events">
+          <div class="event start-2 end-5 securities">
+            <p class="title">Securities Regulation</p>
+            <p class="time">2 PM - 5 PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="day tues">
+        <div class="date">
+          <p class="date-num">12</p>
+          <p class="date-day">Tues</p>
+        </div>
+        <div class="events">
+          <div class="event start-10 end-12 corp-fi">
+            <p class="title">Corporate Finance</p>
+            <p class="time">10 AM - 12 PM</p>
+          </div>
+          <div class="event start-1 end-4 ent-law">
+            <p class="title">Entertainment Law</p>
+            <p class="time">1PM - 4PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="day wed">
+        <div class="date">
+          <p class="date-num">11</p>
+          <p class="date-day">Wed</p>
+        </div>
+        <div class="events">
+          <div class="event start-12 end-1 writing">
+            <p class="title">Writing Seminar</p>
+            <p class="time">11 AM - 12 PM</p>
+          </div>
+          <div class="event start-2 end-5 securities">
+            <p class="title">Securities Regulation</p>
+            <p class="time">2 PM - 5 PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="day thurs">
+        <div class="date">
+          <p class="date-num">12</p>
+          <p class="date-day">Thurs</p>
+        </div>
+        <div class="events">
+          <div class="event start-10 end-12 corp-fi">
+            <p class="title">Corporate Finance</p>
+            <p class="time">10 AM - 12 PM</p>
+          </div>
+          <div class="event start-1 end-4 ent-law">
+            <p class="title">Entertainment Law</p>
+            <p class="time">1PM - 4PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="day fri">
+        <div class="date">
+          <p class="date-num">13</p>
+          <p class="date-day">Fri</p>
+        </div>
+        <div class="events">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>
