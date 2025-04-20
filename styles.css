@@ -1,16 +1,355 @@
-/* styles.css */
-
+/* General Styles */
 body {
-  font-family: 'Helvetica', sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 30px;
+  padding: 0;
+}
+
+/*.top-banner {
+  max-width: 600px;
+  margin-left: 200px;
+}*/
+
+.top-banner {
+  position: sticky;
+  top: 0;
+  left: 170px; /* shift right so it doesn’t cover the navbar */
+  max-width: 250px;
+  margin-left: 180px;
+  height: auto;
+  z-index: 10; /* ensures it stays above other elements */
+  background-color: #f9f9f9;
+  padding-right: 800px;
+}
+
+/* Keep the image at the top even as we scroll*/
+.profile-container {
+  margin-left: 170px;
+  padding-top: 120px; /* or whatever height your image is + some extra */
+}
+
+/*.profile-container {
+  max-width: 800px;
+  margin: 0px auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 150px;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+}*/
+
+/* Profile Header (Image + Details) */
+
+/* Makes sure the site itself does not get covered by nav bar*/
+.profile-container {
+  margin-left: 170px; /* nav width + a little extra spacing */
+  padding: 20px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  background-color: #0C499C; /* light blue background */
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-right: 0px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.name-and-role {
+  display: flex;
+  flex-direction: column;
+  gap: 0px; /* Reduce this to bring Peer closer to Jane Doe */
+}
+
+.name-and-role h1,
+.name-and-role .role {
+  margin: 0; /* Remove any default browser margin */
+  line-height: 1.5; /* Optional: Makes lines more compact */
+}
+
+.profile-details h1 {
+  font-size: 30px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  /*justify-content: space-between;  /* Space out the elements */
+}
+
+.profile-details .role {
+  margin: 0; /* Remove margin from Peer */
+  font-size: 3px;
+  color: #ffffff;
+}
+
+.name-and-hours {
+  display: flex;
+  /*align-items: center;*/
+  flex-direction: column;
+  gap: 5px;
+  /*gap: 20px; spacing between name and hours */
+}
+
+.volunteer-status {
+  margin-left: 0px;  /* Space between the name and the hours */
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.active-text {
+  color: #94d500;
+}
+
+.volunteer-since {
+  margin-left: 50px;  /* Space between the name and the hours */
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.profile-details .role {
+  font-size: 1.3rem;
+  color: #f7a700;
+}
+
+/* Profile Bio Section */
+.profile-bio h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.profile-bio p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Profile Contact Section */
+.profile-contact h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.profile-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.demographic-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.emergency-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-contact li {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+  position: fixed; /* Sticks it to the left side */
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh; /* Full height of viewport */
+  background-color: #f1f1f1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes .nav-bottom to the bottom */
+  padding: 20px 0;
+  /*box-sizing: border-box;*/
+
+  /*padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);*/
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  text-align: left;
+}
+
+.navbar li a {
+  display: block;
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+.navbar .active {
+  background-color: #0C499C;
+  color: white;
+}
+
+/* Nav Bottom */
+.nav-bottom {
+  padding: 12px 16px;
+  margin-bottom: 20px; /* Push it slightly up */
+}
+
+.nav-bottom a {
+  color: #000;
+  text-decoration: none;
+}
+
+.nav-bottom a:hover {
+  color: red;
+}
+
+/* stuff for Calender page */
+.page-content {
+  margin-left: 170px; /* push content to the right of nav bar */
+  padding: 40px;
+}
+
+.calendar-placeholder {
+  border: 2px dashed #ccc;
+  padding: 50px;
+  text-align: center;
+  color: #666;
+  font-size: 1.2rem;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+
+/* Calendar */
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+/* Month header */
+.month {
+  padding: 30px 20px;
+  width: 100%;
+  background: #0C499C;
+  text-align: center;
+}
+
+/* Month list */
+.month ul {
   margin: 0;
   padding: 0;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: #fff;
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
-/* etc… */
+/* Previous button inside month header */
+.month .prev {
+  float: left;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+/* Next button */
+.month .next {
+  float: right;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color:#ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size:15px;
+  color: #777;
+}
+
+/* Highlight the "current" day
+.days li .active {
+  padding: 5px;
+  background: #0C499C;
+  color: white !important
+}*/
+
+/* Highlight when we hover over a day */
+.days li:hover {
+  background-color: #0C499C;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.page-content {
+  margin-left: 170px;
+  padding: 40px;
+}
+
+.volunteer-list {
+  margin-top: 20px;
+}
+
+.volunteer-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.volunteer-list li {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.volunteer-list a {
+  text-decoration: none;
+  color: #0C499C;
+  font-weight: bold;
+}
+
+.volunteer-list a:hover {
+  text-decoration: underline;
+}

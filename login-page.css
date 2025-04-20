@@ -1,0 +1,104 @@
+/* Base reset */
+
+/* Body background and centering */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 30px;
+  padding: 0;
+}
+
+.top-banner {
+  position: sticky;
+  top: 0;
+  left: 170px; /* shift right so it doesn’t cover the navbar */
+  max-width: 250px;
+  margin-left: 180px;
+  height: auto;
+  z-index: 10; /* ensures it stays above other elements */
+  background-color: #f9f9f9;
+  padding-right: 800px;
+}
+
+/* Keep the image at the top even as we scroll*/
+.profile-container {
+  margin-left: 170px;
+  padding-top: 120px; /* or whatever height your image is + some extra */
+}
+
+
+.bottom-image {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 5%;
+  height: auto;
+  z-index: -1; /* Puts it behind other content */
+}
+
+/* Container for the login box */
+.login-container {
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Login form styling */
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #0C499C;
+}
+
+.login-form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.login-form button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #0C499C;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-form button:hover {
+  background-color: #083772;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.signup-text a {
+  color: #0C499C;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}

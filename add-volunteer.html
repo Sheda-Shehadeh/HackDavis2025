@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Volunteer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Add New Volunteer</h1>
+
+  <form action="volunteer-profiles.html" method="get" onsubmit="handleFormSubmit(event)">
+    <label for="first name">First Name:</label><br/>
+    <input type="text" id="first name" first-name="first name" required><br/><br/>
+
+    <!-- NEED TO EDIT ID FORMULATION-->
+    <label for="id">Unique ID (for profile URL):</label><br/>
+    <input type="text" id="id" name="id" required><br/><br/>
+
+    <label for="last name">Last Name:</label><br/>
+    <input type="text" id="last name" name="last name" required><br/><br/>
+    
+    <label for="email">Email:</label><br/>
+    <input type="email" id="email" name="email"><br/><br/>
+
+    <label for="phone">Phone Number:</label><br/>
+    <input type="tel" id="phone" name="phone"><br/><br/>
+
+    <label for="gender">Gender:</label><br/>
+    <input type="gender" id="gender" name="gender"><br/><br/>
+
+    <label for="address">Address:</label><br/>
+    <textarea id="address" name="address"></textarea><br/><br/>
+
+    <label for="demographics">Demographics:</label><br/>
+    <textarea id="demographics" name="demographics"></textarea><br/><br/>
+
+    <button type="submit">Save Volunteer</button>
+  </form>
+
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const id = document.getElementById("id").value.trim();
+
+      // Store volunteer data in localStorage (optional)
+      const newVolunteer = { name, id };
+      const existing = JSON.parse(localStorage.getItem("volunteers") || "[]");
+      existing.push(newVolunteer);
+      localStorage.setItem("volunteers", JSON.stringify(existing));
+
+      // Redirect back to volunteer list
+      window.location.href = "volunteer-profiles.html";
+    }
+  </script>
+</body>
+</html>
